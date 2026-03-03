@@ -11,12 +11,15 @@
     <meta property="og:description" content="Quality craftsmanship, transparent pricing, and a team that picks up the phone. Serving DC, Maryland & Virginia.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vcremodeling.net">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1556910103-1c02745a872f?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -84,8 +87,8 @@
     <div class="fixed top-0 left-0 w-full bg-slate text-white py-2 z-50 text-sm hidden md:block border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <div class="flex items-center gap-6">
-                <span class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg> Serving DC, Maryland & Virginia</span>
-                <span class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 24/7 Emergency Service</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand"></i> Serving DC, Maryland & Virginia</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-clock text-brand"></i> 24/7 Emergency Service</span>
             </div>
             <div>
                 <span>Licensed & Fully Insured Contractors</span>
@@ -99,8 +102,12 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="block">
-                        <img src="new vc logo.png" alt="V&C Remodeling Logo" class="h-10 md:h-14 w-auto object-contain">
+                    <a href="#" class="flex items-center gap-2 no-underline">
+                        <div class="bg-brand text-white font-black text-xl md:text-2xl px-3 py-1.5 rounded-lg shadow-sm">V&C</div>
+                        <div class="leading-none hidden sm:block">
+                            <div class="text-slate font-black text-sm md:text-base uppercase tracking-wider">Remodeling</div>
+                            <div class="text-gray-400 text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.15em]">DMV Contractors</div>
+                        </div>
                     </a>
                 </div>
 
@@ -153,7 +160,7 @@
     <section id="hero" class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 flex flex-col justify-center min-h-[75vh]">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" alt="Premium Bathroom Remodel" class="w-full h-full object-cover object-center" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Beautiful Modern Home Remodel" class="w-full h-full object-cover object-center" loading="lazy">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
 
@@ -227,7 +234,7 @@
             
             <div class="bg-white p-8 md:p-12 rounded-2xl border border-stone shadow-soft relative overflow-hidden flex flex-col md:flex-row items-center gap-8 text-left">
                 <div class="w-24 h-24 flex-shrink-0 bg-brand/10 rounded-full flex items-center justify-center text-brand">
-                     <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                     <i class="fa-solid fa-shield-halved text-5xl"></i>
                 </div>
                 <div>
                     <h3 class="font-serif text-2xl md:text-3xl text-slate mb-4 font-bold">Our Guarantee to You</h3>
@@ -253,12 +260,12 @@
                 <!-- Service 1: Kitchen -->
                 <div class="bg-white rounded-2xl border border-stone overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 group reveal flex flex-col cursor-pointer">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop" alt="Premium Kitchen Remodeling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800&auto=format&fit=crop" alt="Premium Kitchen Remodeling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-8 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-10 h-10 bg-slate rounded flex items-center justify-center text-white">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                <i class="fa-solid fa-kitchen-set text-lg"></i>
                             </div>
                             <h3 class="font-serif text-2xl font-bold text-slate">Kitchen Remodeling</h3>
                         </div>
@@ -272,12 +279,12 @@
                 <!-- Service 2: Bathroom -->
                 <div class="bg-white rounded-2xl border border-stone overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 group reveal flex flex-col cursor-pointer" style="transition-delay: 100ms;">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop" alt="Luxury Bathroom Remodeling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop" alt="Luxury Bathroom Remodeling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-8 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-10 h-10 bg-slate rounded flex items-center justify-center text-white">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <i class="fa-solid fa-bath text-lg"></i>
                             </div>
                             <h3 class="font-serif text-2xl font-bold text-slate">Bathroom Remodeling</h3>
                         </div>
@@ -291,12 +298,12 @@
                 <!-- Service 3: Floors -->
                 <div class="bg-white rounded-2xl border border-stone overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 group reveal flex flex-col cursor-pointer" style="transition-delay: 200ms;">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=800&auto=format&fit=crop" alt="Premium Hardwood Floors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?q=80&w=800&auto=format&fit=crop" alt="Premium Hardwood Floors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-8 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-10 h-10 bg-slate rounded flex items-center justify-center text-white">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                                <i class="fa-solid fa-layer-group text-lg"></i>
                             </div>
                             <h3 class="font-serif text-2xl font-bold text-slate">Wood Floors</h3>
                         </div>
@@ -310,12 +317,12 @@
                 <!-- Service 4: Painting -->
                 <div class="bg-white rounded-2xl border border-stone overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 group reveal flex flex-col cursor-pointer">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop" alt="Professional Interior Painting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=800&auto=format&fit=crop" alt="Professional Interior Painting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-8 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-10 h-10 bg-slate rounded flex items-center justify-center text-white">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                                <i class="fa-solid fa-paint-roller text-lg"></i>
                             </div>
                             <h3 class="font-serif text-2xl font-bold text-slate">Painting</h3>
                         </div>
@@ -329,12 +336,12 @@
                 <!-- Service 5: Electricity -->
                 <div class="bg-white rounded-2xl border border-stone overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 group reveal flex flex-col cursor-pointer" style="transition-delay: 100ms;">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1558522195-e1201b090344?q=80&w=800&auto=format&fit=crop" alt="Electrical Services" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Electrical Services" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-8 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-10 h-10 bg-slate rounded flex items-center justify-center text-white">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                <i class="fa-solid fa-bolt text-lg"></i>
                             </div>
                             <h3 class="font-serif text-2xl font-bold text-slate">Electricity</h3>
                         </div>
@@ -348,12 +355,12 @@
                 <!-- Service 6: A/C -->
                 <div class="bg-white rounded-2xl border border-stone overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 group reveal flex flex-col cursor-pointer" style="transition-delay: 200ms;">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1610486828249-14a0fc02dbfb?q=80&w=800&auto=format&fit=crop" alt="AC and HVAC Services" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="https://images.unsplash.com/photo-1585338107529-13afc5f02586?q=80&w=800&auto=format&fit=crop" alt="AC and HVAC Services" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-8 flex-1 flex flex-col">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-10 h-10 bg-slate rounded flex items-center justify-center text-white">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                                <i class="fa-solid fa-fan text-lg"></i>
                             </div>
                             <h3 class="font-serif text-2xl font-bold text-slate">A/C</h3>
                         </div>
@@ -392,7 +399,7 @@
                         <div class="flex gap-4">
                             <div class="flex-shrink-0 mt-1">
                                 <div class="w-12 h-12 rounded bg-slate shadow-sm flex items-center justify-center text-white">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <i class="fa-solid fa-clock text-xl"></i>
                                 </div>
                             </div>
                             <div>
@@ -404,7 +411,7 @@
                         <div class="flex gap-4">
                             <div class="flex-shrink-0 mt-1">
                                 <div class="w-12 h-12 rounded bg-slate shadow-sm flex items-center justify-center text-white">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                    <i class="fa-solid fa-file-invoice-dollar text-xl"></i>
                                 </div>
                             </div>
                             <div>
@@ -416,7 +423,7 @@
                         <div class="flex gap-4">
                             <div class="flex-shrink-0 mt-1">
                                 <div class="w-12 h-12 rounded bg-slate shadow-sm flex items-center justify-center text-white">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                    <i class="fa-solid fa-shield-halved text-xl"></i>
                                 </div>
                             </div>
                             <div>
@@ -428,7 +435,7 @@
                         <div class="flex gap-4">
                             <div class="flex-shrink-0 mt-1">
                                 <div class="w-12 h-12 rounded bg-slate shadow-sm flex items-center justify-center text-white">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                                    <i class="fa-solid fa-broom text-xl"></i>
                                 </div>
                             </div>
                             <div>
@@ -441,7 +448,7 @@
 
                 <!-- Right: Image -->
                 <div class="relative rounded-2xl overflow-hidden shadow-card reveal group h-full min-h-[400px]">
-                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2074&auto=format&fit=crop" alt="Before and After Kitchen Remodel Silver Spring MD" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2074&auto=format&fit=crop" alt="Before and After Kitchen Remodel Silver Spring MD" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate/90 via-slate/10 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-8 w-full">
                         <div class="bg-brand text-white text-xs font-bold uppercase tracking-wider py-1.5 px-3 inline-block rounded mb-3">Project Showcase</div>
@@ -737,19 +744,121 @@
         </div>
     </section>
 
+    <!-- GOOGLE MY BUSINESS / REVIEWS SECTION -->
+    <section id="google-reviews" class="py-24 bg-cream border-t border-stone">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand font-bold tracking-widest uppercase text-sm mb-2 block">Find Us Online</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-slate">Visit Us on Google</h2>
+                <p class="text-xl text-gray-500 max-w-2xl mx-auto">See our reviews, photos, and get directions to our service area right from Google.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 reveal">
+                <!-- Google Map Embed -->
+                <div class="rounded-2xl overflow-hidden shadow-card border border-stone h-[400px] lg:h-auto">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d397752.0699498748!2d-77.34627975!3d38.89511625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c6de5af6e45b%3A0xc2524522d4885d2a!2sWashington%2C%20DC%20metropolitan%20area!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                        width="100%"
+                        height="100%"
+                        style="border:0; min-height:400px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="V&C Remodeling Service Area - DMV">
+                    </iframe>
+                </div>
+
+                <!-- Google Business Profile Card -->
+                <div class="flex flex-col gap-6">
+                    <!-- Business Info Card -->
+                    <div class="bg-white rounded-2xl border border-stone shadow-card p-8 flex-1">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-brand rounded-xl flex items-center justify-center shadow-brand">
+                                <i class="fa-brands fa-google text-white text-3xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold text-slate">V&C Remodeling</h3>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <div class="flex text-brand">
+                                        <i class="fa-solid fa-star text-sm"></i>
+                                        <i class="fa-solid fa-star text-sm"></i>
+                                        <i class="fa-solid fa-star text-sm"></i>
+                                        <i class="fa-solid fa-star text-sm"></i>
+                                        <i class="fa-solid fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-600">5.0 on Google</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-location-dot text-brand mt-1 w-5 text-center"></i>
+                                <span class="text-gray-700 font-medium">Serving Washington DC, Maryland & Virginia</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-phone text-brand mt-1 w-5 text-center"></i>
+                                <a href="tel:240-495-8072" class="text-gray-700 font-medium hover:text-brand transition">(240) 495-8072</a>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-envelope text-brand mt-1 w-5 text-center"></i>
+                                <a href="mailto:Vandcremodeling@gmail.com" class="text-gray-700 font-medium hover:text-brand transition">Vandcremodeling@gmail.com</a>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-clock text-brand mt-1 w-5 text-center"></i>
+                                <span class="text-gray-700 font-medium">Open 24/7 — Emergency Service Available</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="https://g.co/kgs/vcremodeling" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-hover text-white font-bold py-3 px-6 rounded-lg shadow-brand transition duration-300">
+                                <i class="fa-brands fa-google"></i>
+                                View on Google
+                            </a>
+                            <a href="https://g.co/kgs/vcremodeling" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 bg-white border-2 border-brand text-brand hover:bg-brand hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                Write a Review
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-white rounded-xl border border-stone p-4 text-center shadow-sm">
+                            <div class="text-2xl font-black text-brand">5.0</div>
+                            <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1">Rating</div>
+                        </div>
+                        <div class="bg-white rounded-xl border border-stone p-4 text-center shadow-sm">
+                            <div class="text-2xl font-black text-brand">100%</div>
+                            <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1">Recommend</div>
+                        </div>
+                        <div class="bg-white rounded-xl border border-stone p-4 text-center shadow-sm">
+                            <div class="text-2xl font-black text-brand">24/7</div>
+                            <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1">Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 10. FOOTER -->
     <footer class="bg-black py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-1 md:col-span-2">
-                    <div class="mb-6 inline-block bg-white p-3 rounded-lg shadow-sm">
-                        <a href="#" class="block">
-                            <img src="new vc logo.png" alt="V&C Remodeling Logo" class="h-10 w-auto object-contain">
+                    <div class="mb-6 inline-flex items-center gap-2">
+                        <a href="#" class="flex items-center gap-2 no-underline">
+                            <div class="bg-brand text-white font-black text-xl px-3 py-1.5 rounded-lg">V&C</div>
+                            <div class="leading-none">
+                                <div class="text-white font-black text-sm uppercase tracking-wider">Remodeling</div>
+                                <div class="text-gray-500 text-[9px] font-semibold uppercase tracking-[0.15em]">DMV Contractors</div>
+                            </div>
                         </a>
                     </div>
                     <p class="text-gray-400 mb-6 max-w-sm">Premium home remodeling and contracting services for the DMV. Quality craftsmanship, built on trust.</p>
                     <div class="flex items-center gap-2 text-sm text-gray-300 font-medium">
-                        <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <i class="fa-solid fa-circle-check text-brand"></i>
                         Licensed & Insured in DC, MD & VA
                     </div>
                 </div>
