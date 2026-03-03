@@ -29,25 +29,63 @@
                 pageLanguage: 'en',
                 includedLanguages: 'en,es',
                 autoDisplay: false
-            }, 'google_translate_element');
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,es',
-                autoDisplay: false
-            }, 'google_translate_element_mobile');
+            }, 'google_translate_hidden');
+        }
+        function switchLang(lang) {
+            var sel = document.querySelector('#google_translate_hidden select');
+            if (!sel) return;
+            if (lang === 'es') {
+                sel.value = 'es';
+                sel.dispatchEvent(new Event('change'));
+            } else {
+                sel.value = 'en';
+                sel.dispatchEvent(new Event('change'));
+                // Also remove the Google Translate cookie to revert
+                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + location.hostname;
+                location.reload();
+            }
+            // Update all toggle buttons
+            document.querySelectorAll('.lang-toggle').forEach(function(el) {
+                var enBtn = el.querySelector('.lang-en');
+                var esBtn = el.querySelector('.lang-es');
+                if (lang === 'es') {
+                    enBtn.classList.remove('bg-white', 'text-slate', 'shadow-sm');
+                    enBtn.classList.add('text-white/60');
+                    esBtn.classList.remove('text-white/60');
+                    esBtn.classList.add('bg-white', 'text-slate', 'shadow-sm');
+                } else {
+                    esBtn.classList.remove('bg-white', 'text-slate', 'shadow-sm');
+                    esBtn.classList.add('text-white/60');
+                    enBtn.classList.remove('text-white/60');
+                    enBtn.classList.add('bg-white', 'text-slate', 'shadow-sm');
+                }
+            });
+            // Mobile toggles
+            document.querySelectorAll('.lang-toggle-mobile').forEach(function(el) {
+                var enBtn = el.querySelector('.lang-en');
+                var esBtn = el.querySelector('.lang-es');
+                if (lang === 'es') {
+                    enBtn.classList.remove('bg-brand', 'text-white');
+                    enBtn.classList.add('text-gray-500');
+                    esBtn.classList.remove('text-gray-500');
+                    esBtn.classList.add('bg-brand', 'text-white');
+                } else {
+                    esBtn.classList.remove('bg-brand', 'text-white');
+                    esBtn.classList.add('text-gray-500');
+                    enBtn.classList.remove('text-gray-500');
+                    enBtn.classList.add('bg-brand', 'text-white');
+                }
+            });
         }
     </script>
     <style>
-        #google_translate_element select { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 2px 8px; font-size: 12px; cursor: pointer; }
-        #google_translate_element select option { color: #333; }
-        #google_translate_element_mobile select { background: transparent; color: #555; border: 1px solid #ddd; border-radius: 6px; padding: 2px 8px; font-size: 12px; cursor: pointer; }
-        #google_translate_element_mobile .goog-te-gadget { font-size: 0 !important; }
-        #google_translate_element_mobile .goog-te-gadget .goog-te-combo { font-size: 12px !important; }
+        #google_translate_hidden { position: absolute; left: -9999px; top: -9999px; }
         .goog-te-banner-frame { display: none !important; }
         body { top: 0 !important; }
         .goog-te-gadget { font-size: 0 !important; }
-        .goog-te-gadget .goog-te-combo { font-size: 12px !important; }
         .VIpgJd-ZVi9od-ORHb-OEVmcd { display: none !important; }
+        .skiptranslate { display: none !important; }
     </style>
 
     <!-- Tailwind CSS -->
@@ -112,6 +150,8 @@
 </head>
 <body class="font-sans antialiased selection:bg-brand selection:text-white bg-cream text-gray-800 pt-24 md:pt-28">
 
+    <div id="google_translate_hidden"></div>
+
     <!-- TOP BAR (Franchise-style utility bar) -->
     <div class="fixed top-0 left-0 w-full bg-slate text-white py-2 z-50 text-sm hidden md:block border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
@@ -122,9 +162,9 @@
             <div class="flex items-center gap-4">
                 <span>Licensed & Fully Insured Contractors</span>
                 <span class="text-white/30">|</span>
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-language text-brand"></i>
-                    <div id="google_translate_element"></div>
+                <div class="lang-toggle inline-flex items-center bg-white/15 rounded-lg p-1 gap-1 cursor-pointer">
+                    <button onclick="switchLang('en')" class="lang-en bg-white text-slate shadow-sm px-4 py-1.5 rounded-md text-xs font-black tracking-wide transition-all duration-200 flex items-center gap-1.5"><i class="fa-solid fa-globe text-sm"></i> English</button>
+                    <button onclick="switchLang('es')" class="lang-es text-white/60 px-4 py-1.5 rounded-md text-xs font-black tracking-wide transition-all duration-200 flex items-center gap-1.5">Español</button>
                 </div>
             </div>
         </div>
@@ -156,7 +196,11 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
+                <div class="md:hidden flex items-center gap-3">
+                    <div class="lang-toggle-mobile inline-flex items-center bg-gray-100 rounded-lg p-1 gap-1 border border-gray-200">
+                        <button onclick="switchLang('en')" class="lang-en bg-brand text-white px-3 py-1.5 rounded-md text-xs font-black tracking-wide transition-all duration-200 flex items-center gap-1.5"><i class="fa-solid fa-globe text-sm"></i> EN</button>
+                        <button onclick="switchLang('es')" class="lang-es text-gray-500 px-3 py-1.5 rounded-md text-xs font-black tracking-wide transition-all duration-200">ES</button>
+                    </div>
                     <button id="mobile-menu-btn" class="text-slate hover:text-brand focus:outline-none" aria-label="Toggle menu">
                         <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" id="menu-icon-path"/>
@@ -169,12 +213,7 @@
         <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone absolute w-full shadow-soft">
             <div class="px-4 pt-2 pb-6 space-y-4">
-                <div class="flex items-center justify-between">
-                    <a href="#services" class="block text-gray-600 hover:text-brand py-2 font-medium">Our Services</a>
-                    <div id="google_translate_element_mobile" class="flex items-center gap-1 text-sm text-gray-500">
-                        <i class="fa-solid fa-language text-brand"></i>
-                    </div>
-                </div>
+                <a href="#services" class="block text-gray-600 hover:text-brand py-2 font-medium">Our Services</a>
                 <a href="#why-us" class="block text-gray-600 hover:text-brand py-2 font-medium">Why Choose Us</a>
                 <a href="#process" class="block text-gray-600 hover:text-brand py-2 font-medium">How It Works</a>
                 <div class="pt-4 border-t border-stone flex flex-col gap-3">
@@ -926,7 +965,7 @@
             
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
                 <p>&copy; 2026 V&C Remodeling. All rights reserved.</p>
-                <p class="mt-2 md:mt-0 font-medium">Vcremodeling.net</p>
+                <p class="mt-2 md:mt-0 font-medium">Built by Tagglefish</p>
             </div>
         </div>
     </footer>
