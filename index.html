@@ -32,33 +32,16 @@
             }, 'google_translate_hidden');
         }
         function switchLang(lang) {
-            var sel = document.querySelector('#google_translate_hidden select');
-            if (!sel) return;
             if (lang === 'es') {
-                sel.value = 'es';
-                sel.dispatchEvent(new Event('change'));
+                document.cookie = 'googtrans=/en/es; path=/';
+                document.cookie = 'googtrans=/en/es; path=/; domain=' + location.hostname;
+                location.reload();
             } else {
-                sel.value = 'en';
-                sel.dispatchEvent(new Event('change'));
                 document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname;
                 document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + location.hostname;
                 location.reload();
             }
-            // Update panel buttons
-            var enBtn = document.getElementById('lang-btn-en');
-            var esBtn = document.getElementById('lang-btn-es');
-            if (lang === 'es') {
-                enBtn.classList.remove('bg-brand', 'text-white', 'border-brand');
-                enBtn.classList.add('bg-white', 'text-slate', 'border-gray-200');
-                esBtn.classList.remove('bg-white', 'text-slate', 'border-gray-200');
-                esBtn.classList.add('bg-brand', 'text-white', 'border-brand');
-            } else {
-                esBtn.classList.remove('bg-brand', 'text-white', 'border-brand');
-                esBtn.classList.add('bg-white', 'text-slate', 'border-gray-200');
-                enBtn.classList.remove('bg-white', 'text-slate', 'border-gray-200');
-                enBtn.classList.add('bg-brand', 'text-white', 'border-brand');
-            }
-            closeLangPanel();
         }
         function openLangPanel() {
             document.getElementById('lang-overlay').classList.remove('hidden');
@@ -70,12 +53,11 @@
         }
     </script>
     <style>
-        #google_translate_hidden { position: absolute; left: -9999px; top: -9999px; }
+        #google_translate_hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
         .goog-te-banner-frame { display: none !important; }
         body { top: 0 !important; }
-        .goog-te-gadget { font-size: 0 !important; }
         .VIpgJd-ZVi9od-ORHb-OEVmcd { display: none !important; }
-        .skiptranslate { display: none !important; }
+        #goog-gt-tt { display: none !important; }
     </style>
 
     <!-- Tailwind CSS -->
@@ -1058,9 +1040,9 @@
     </script>
 
     <!-- Floating Language Button -->
-    <button onclick="openLangPanel()" class="fixed top-1/2 -translate-y-1/2 right-0 z-50 bg-slate text-white w-10 h-20 rounded-l-xl shadow-lg hover:bg-gray-700 transition flex flex-col items-center justify-center gap-1 group" aria-label="Change Language">
-        <i class="fa-solid fa-globe text-lg group-hover:text-brand transition"></i>
-        <span class="text-[9px] font-bold leading-tight tracking-wider">EN<br>ES</span>
+    <button onclick="openLangPanel()" class="fixed bottom-24 md:bottom-8 right-4 z-50 bg-brand hover:bg-brand-hover text-white rounded-full shadow-brand hover:shadow-lg transition-all duration-300 flex items-center gap-2 px-5 py-3" aria-label="Change Language">
+        <i class="fa-solid fa-globe text-xl"></i>
+        <span class="font-bold text-sm">EN / ES</span>
     </button>
 
     <!-- Language Panel Overlay -->
